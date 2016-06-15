@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>dialog.js</title>
+    <link rel="stylesheet" href="./css/dialog.min.css">
+    <script src="./js/dialog.min.js"></script>
+</head>
+<body style="margin:0; padding:8px">
+    <h1>Dialog.js</h1>
+    <h2>simulate alert</h2>
+    <button onclick="showAlert('弹窗标题', '弹窗内容，告知当前页面信息等', function(){console.log('点击确认')})">simulate alert with title</button>
+    <button onclick="showAlert('弹窗内容，告知当前页面信息等', function(){console.log('点击确认')})">simulate alert without title</button>
+    <h2>simulate confirm</h2>
+    <button onclick="showConfirm('弹窗标题', '弹窗内容，告知当前页面信息等', function(){console.log('点击确认')}, function(){console.log('点击取消')})">simulate confirm with title</button>
+    <button onclick="showConfirm('弹窗内容，告知当前页面信息等', function(){console.log('点击确认')}, function(){console.log('点击取消')})">simulate confirm without title</button>
+    <h2>customize popup</h2>
+    <button data-toggle="pop" data-target="#popDemo">customize popup</button>
+    <div class="pop" style="display: none;" id="popDemo">
+        <div class="pop-dialog">
+            <div class="pop-content">
+                <div class="pop-header">弹窗标题</div>
+                <div class="pop-body">
+                	<p>自定义弹窗内容</p>
+                	<div>
+                		<label>用户名</label><input type="text">
+                	</div>
+                </div>
+                <div class="pop-footer">
+                    <div data-action="close" class="primary">关闭</div>
+                    <div>自定义按钮</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
