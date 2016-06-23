@@ -87,8 +87,8 @@
 				}, 5e2);
 			}
 			// In order to directly call
-			evt.stopPropagation && evt.stopPropagation();
-			evt.preventDefault && evt.preventDefault();
+			evt && evt.stopPropagation && evt.stopPropagation();
+			evt && evt.preventDefault && evt.preventDefault();
 			document.documentElement.setAttribute('class', '');
 			document.body.setAttribute('class', '');
 		},
