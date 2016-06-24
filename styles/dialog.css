@@ -113,7 +113,10 @@
                  -o-transform: scaleX(0.5);
                     transform: scaleX(0.5); }
           .pop .pop-dialog .pop-content .pop-footer > div:active {
-            background-color: #eee; }
+            background-color: #eee;
+            -webkit-border-radius: 0 0 4px 4px;
+               -moz-border-radius: 0 0 4px 4px;
+                    border-radius: 0 0 4px 4px; }
           .pop .pop-dialog .pop-content .pop-footer > div.primary {
             color: #0bb20c; }
           .pop .pop-dialog .pop-content .pop-footer > div.hide {
