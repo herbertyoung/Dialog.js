@@ -10,6 +10,11 @@
         .pop-show {
             overflow: hidden;
         }
+        // ios click event bug
+        [data-toggle='pop'],
+        [data-action='close'] {
+            cursor: pointer;
+        }
     }
     .pop-dialog {
         width: 100%;
