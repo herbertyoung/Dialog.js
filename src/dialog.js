@@ -3,6 +3,8 @@
 	var document = exports.document,
 		defaults = {
 			type: 'confirm',
+			fade: true,
+			transparentMask: false,
 			confirmText: '确定',
 			cancelText: '取消'
 		};
@@ -12,7 +14,8 @@
 		return div;
 	}
 	function createElements(){
-		var top = createDiv('pop'),
+		var top,
+			topClassList = ['pop'],
 			dialog = createDiv('pop-dialog'),
 			content = createDiv('pop-content'),
 			header = createDiv('pop-header'),
@@ -20,6 +23,9 @@
 			footer = createDiv('pop-footer'),
 			btnConfirm = createDiv('primary'),
 			btnCancel = createDiv();
+		this.fade === true && topClassList.push('fade');
+		this.transparentMask === true && topClassList.push('transparent');
+		top = createDiv(topClassList.join(' '));
 		btnConfirm.textContent = this.confirmText;
 		btnConfirm.dataset.action = 'confirm';
 		btnCancel.textContent = this.cancelText;
@@ -70,20 +76,25 @@
 			cancel && typeof cancel === 'function' && (this.cancelHandler = cancel);
 			document.documentElement.setAttribute('class', 'pop-show');
 			document.body.setAttribute('class', 'pop-show');
+			if(this.fade && this.fade === true){
+				setTimeout(function(){
+					this.context.classList.add('in');
+				}.bind(this), 10);
+			}
 			this.context.style.display = 'block';
 		},
 		hide: function(evt){
-			var _this = this;
+			this.fade && this.fade === true && (this.context.classList.remove('in'));
 			this.context.style.display = 'none';
 			if(this.confirmHandler){
 				setTimeout(function(){
-					_this.confirmHandler = null;
-				}, 5e2);
+					this.confirmHandler = null;
+				}.bind(this), 5e2);
 			}
 			if(this.cancelHandler){
 				setTimeout(function(){
-					_this.cancelHandler = null;
-				}, 5e2);
+					this.cancelHandler = null;
+				}.bind(this), 5e2);
 			}
 			// In order to directly call
 			evt && evt.stopPropagation && evt.stopPropagation();

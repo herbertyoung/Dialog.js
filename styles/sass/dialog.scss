@@ -6,6 +6,16 @@
     position: fixed;
     background-color: rgba(0, 0, 0, .5);
     display: none;
+    &.fade {
+        opacity: 0;
+        transition: opacity .3s linear;
+        &.in {
+            opacity: 1;
+        }
+    }
+    &.transparent {
+        background-color: transparent;
+    }
     @at-root {
         .pop-show {
             overflow: hidden;
