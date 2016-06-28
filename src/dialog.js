@@ -24,8 +24,7 @@
 		btnConfirm.dataset.action = 'confirm';
 		btnCancel.textContent = this.cancelText;
 		btnCancel.dataset.action = 'cancel';
-		this.type === 'alert' && btnCancel.setAttribute('class', 'hide');
-		footer.appendChild(btnCancel);
+		this.type !== 'alert' && (footer.appendChild(btnCancel));
 		footer.appendChild(btnConfirm);
 		content.appendChild(header);
 		content.appendChild(body);
