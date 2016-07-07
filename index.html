@@ -7,33 +7,33 @@
     <meta content="black" name="apple-mobile-web-app-status-bar-style">
     <meta content="telephone=no" name="format-detection">
     <meta content="email=no" name="format-detection">
-    <title>dialog.js</title>
+    <title>Dialog.js</title>
     <link rel="stylesheet" href="./css/dialog.min.css">
     <script src="./js/dialog.min.js"></script>
 </head>
 <body style="margin:0; padding:8px">
     <h1>Dialog.js</h1>
-    <h2>simulate alert</h2>
-    <button onclick="showAlert('弹窗标题', '弹窗内容，告知当前页面信息等', function(){console.log('点击确认')})">simulate alert with title</button>
-    <button onclick="showAlert('弹窗内容，告知当前页面信息等', function(){console.log('点击确认')})">simulate alert without title</button>
-    <h2>simulate confirm</h2>
-    <button onclick="showConfirm('弹窗标题', '弹窗内容，告知当前页面信息等', function(){console.log('点击确认')}, function(){console.log('点击取消')})">simulate confirm with title</button>
-    <button onclick="showConfirm('弹窗内容，告知当前页面信息等', function(){console.log('点击确认')}, function(){console.log('点击取消')})">simulate confirm without title</button>
-    <h2>customize popup</h2>
-    <button data-toggle="pop" data-target="#popDemo">customize popup</button>
+    <h2>Simulating alert</h2>
+    <button onclick="showAlert('Title', 'Here is your content.', function(){console.log('confirm')})">alert with title</button>
+    <button onclick="showAlert('Here is your content.', function(){console.log('confirm')})">alert without title</button>
+    <h2>Simulating confirm</h2>
+    <button onclick="showConfirm('Title', 'Here is your content.', function(){console.log('confirm')}, function(){console.log('cancel')})">confirm with title</button>
+    <button onclick="showConfirm('Here is your content.', function(){console.log('confirm')}, function(){console.log('cancel')})">confirm without title</button>
+    <h2>Customizing a popup window</h2>
+    <button data-toggle="pop" data-target="#popDemo">show a customized popup window</button>
     <div class="pop" style="display: none;" id="popDemo">
         <div class="pop-dialog">
             <div class="pop-content">
-                <div class="pop-header">弹窗标题</div>
+                <div class="pop-header">Title</div>
                 <div class="pop-body">
-                	<p>自定义弹窗内容</p>
+                	<p>Here is your content.</p>
                 	<div>
-                		<label>用户名</label><input type="text">
+                		<label>User: </label><input type="text">
                 	</div>
                 </div>
                 <div class="pop-footer">
-                    <div data-action="close" class="primary">关闭</div>
-                    <div>自定义按钮</div>
+                    <div data-action="close" class="primary">Close</div>
+                    <div>A button</div>
                 </div>
             </div>
         </div>
