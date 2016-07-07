@@ -1,12 +1,15 @@
 # Dialog.js
 A JavaScript plugin simulating the native JavaScript functions: 'alert()' and 'confirm()'. In addition you can easily customize your popup windows.
-## How to use?
-### 1.Including files
+
+## Usage
+
+### Including files
 ```html
 <link rel="stylesheet" href="./css/dialog.min.css">
 <script src="./js/dialog.min.js"></script>
 ```
-### 2.Calling the plugin
+
+### Calling the plugin
 ```html
 <script>
     // simulate alert with title
@@ -19,7 +22,10 @@ A JavaScript plugin simulating the native JavaScript functions: 'alert()' and 'c
     showConfirm('content', function confirmHandler(){}, function cancel(){});
 </script>
 ```
+
 ## Customizing yourself a popup window
+You can also customize yourself a popup window.
+
 A popup window's html structure is:
 ```html
 <div class="pop" style="display: none;" id="popDemo">
@@ -40,11 +46,17 @@ A popup window's html structure is:
     </div>
 </div>
 ```
-How to show this popup window? You can just using "data-*" attributes to show yours.
+
+How to show this popup window? You can just using `data-*` attributes to show yours.
+
+The `data-toggle="pop"` attribute means that show a pop up window.
+
+The `data-target="#popDemo"` attribute means that which pop up window will be shown. 
 ```html
 <button data-toggle="pop" data-target="#popDemo">show customized popup</button>
 ```
-You can also customize your close button to hide you popup window by using a "data-*" attribute like:
+
+You can also customize your close button to hide you popup window using the `data-action="close"` attribute.
 ```html
 <div data-action="close">close</div>
 ```
