@@ -1,25 +1,27 @@
 # Dialog.js
-A JavaScript plugin simulating the native JavaScript functions: 'alert()' and 'confirm()'. In addition you can easily customize your popup windows.
+A JavaScript plugin simulating the native JavaScript functions: `alert()` and `confirm()`. In addition you can easily customize your popup windows.
 
 ## Usage
 
 ### Including files
 ```html
-<link rel="stylesheet" href="./css/dialog.min.css">
-<script src="./js/dialog.min.js"></script>
+<link rel="stylesheet" href="css/dialog.min.css">
+<script src="js/dialog.min.js"></script>
 ```
 
 ### Calling the plugin
+
+#### Show the `alert` popup window
 ```html
 <script>
-    // simulate alert with title
     showAlert('title', 'content', function confirmHandler(){});
-    // simulate alert without title
-    showAlert('content', function confirmHandler(){});
-    // simulate confirm with title
-    showConfirm('title', 'content', function confirmHandler(){}, function cancel(){});
-    // simulate confirm without title
-    showConfirm('content', function confirmHandler(){}, function cancel(){});
+</script>
+```
+
+#### Show the `confirm` popup window
+```html
+<script>
+    showConfirm('title', 'content', function confirmHandler(){}, function cancelHandler(){});
 </script>
 ```
 
@@ -60,3 +62,32 @@ You can also customize your close button to hide you popup window using the `dat
 ```html
 <div data-action="close">close</div>
 ```
+
+## Methods
+
+### `Alert`
+
+#### showAlert([title], content, [confirmHandler])
+Show the `alert` popup window.
+
+Parameters:
+- title: String
+- content: String
+- confirmHandler: Function
+
+#### hideAlert()
+Hide the `alert` popup window.
+
+### `Confirm`
+
+#### showConfirm([title], content, [confirmHandler, [cancelHandler]])
+Show the `confirm` popup window.
+
+Parameters:
+- title: String
+- content: String
+- confirmHandler: Function
+- cancelHandler: Function
+
+#### hideConfirm()
+Hide the `confirm` popup window.
